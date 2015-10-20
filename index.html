@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>MOVIE PAL</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="animate/animate.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<div id="wrap">
+
+		<!-- SEARCH -->
+		<div id="search">
+
+			<!-- INPUT FORM -->
+			<form id="movie-form" autocomplete="off">
+				<input type="text" name="movie-name" placeholder="Movie Title"><!--
+				--><input type="submit" name="movie-submit" value="Search">
+			</form>
+
+			<!-- SEARCH RESULTS WRAPPER -->
+			<div id="search-results">
+
+					<script id="movie-template" type="text/x-handlebars-template">
+
+				<!-- TEMPLATE FOR DISPLAYING A MOVIE -->
+
+					{{#each this}}
+						<div class="movie-result animated fadeIn">
+
+							<figure class="poster-figure">
+								<img class="poster" src={{imgUrl}} />
+							</figure>
+							<div class="title"> {{title}} </div>
+							<div>
+								<span class="label">Release Date:</span> 
+								<span class="release-date"> {{releaseDate}} </span>
+							</div>
+							<div>
+								<span class="label">Popularity:</span> 
+								<span class="popularity"> {{popularity}} </span>
+							</div>			
+							<div class="plot">
+								{{plot}}
+							</div>	
+						</div>	
+
+					{{/each}}
+
+				</script>
+
+			</div>
+
+		</div>	
+			
+	</div>
+
+	<script src="./js/jquery-1.11.3.min.js"></script>
+	<script src="./js/handlebars-v4.0.2.js"></script>
+	<script src="./js/api-caller.js" ></script>
+	<script src="./js/search.js" ></script> 
+</body>
+</html>
